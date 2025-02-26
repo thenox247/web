@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <title>Registro de Ventas</title>
+  <link rel="stylesheet" href="diseñoR.css">
+
+  <style>
+    .error-message {
+      color: red;
+      display: none;
+      margin-top: 5px;
+    }
+    .input-group {
+      margin-bottom: 15px;
+    }
+    table thead {
+      background: red;
+      color: white;
+      text-align: center;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+          <th>REGISTRO VENTAS</th>
+        </tr>
+    </thead>
+  </table>
+
+  <div class="container mt-4 shadow-lg p-3 mb-5 bg-body rounded">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>ID Venta</th>
+          <th>ID Cliente</th>
+          <th>Metodo de Pago</th>
+          <th>Nombre del Cliente</th>
+          <th>Monto Final</th>
+          <th>Estado de Factura</th>
+          <th>Fecha de Venta</th>
+          <th>Descuento</th>
+          <th>Detalle de Venta</th>
+        </tr>
+      </thead>
+      <tbody id="data">
+      </tbody>
+    </table>
+    
+    <form id="form">
+      <div class="input-group">
+        <input placeholder="ID Venta" type="number" id="idven" name="idVenta" required>
+        <div class="error-message" id="idVentaError">El ID de venta es obligatorio.</div>
+      </div>
+
+      <div class="input-group">
+        <input placeholder="ID Cliente" type="number" id="idcli" name="idCliente" required>
+        <div class="error-message" id="idClienteError">El ID del cliente es obligatorio.</div>
+      </div>
+
+      <div class="input-group">
+        <input placeholder="Metodo de Pago" type="text" id="mepag" name="metodoPago" required>
+        <div class="error-message" id="metodoPagoError">El metodo de pago es obligatorio.</div>
+      </div>
+
+      <div class="input-group">
+        <input placeholder="Nombre Cliente" type="text" id="namecli" name="nombreCliente" required>
+        <div class="error-message" id="nombreClienteError">El nombre del cliente es obligatorio.</div>
+      </div>
+
+      <div class="input-group">
+        <input placeholder="Monto Final" type="text" id="monfi" name="montoFinal" required>
+        <div class="error-message" id="montoFinalError">El monto final es obligatorio.</div>
+      </div>
+
+      <div class="input-group">
+        <select id="estfac" name="estadoFactura" required>
+          <option value="Pagada">Pagada</option>
+          <option value="Pendiente">Pendiente</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <input placeholder="Fecha de Venta" type="date" id="dateven" name="fechaVenta" required>
+        <div class="error-message" id="fechaVentaError">La Fecha de vencimiento es obligatoria.</div>
+      </div>
+
+      <div class="input-group">
+        <input placeholder="Descuento" type="text" id="des" name="descripcion" required>
+      </div>
+
+      <div class="input-group">
+        <input placeholder="Detalle de Venta" type="text" id="detven" name="detalleVenta" required>
+        <div class="error-message" id="detalleVentaError">El detalle de venta es obligatorio.</div>
+      </div>
+
+      <button id="limpiar">Limpiar</button>
+      <button id="crear">Crear</button>
+      <button id="modificar2">Editar</button>
+      
+    </form>
+    
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+
+  <script src="./Validar.js"></script>
+  <script src="./procesos.js">
+  </script>
+
+  <div class="menu" id="buscar">
+    <a href="consultarv.html" class="menu-button">Consulta venta por ID de Cliente</a>
+  </div>
+  
+  <script src="https://static.elfsight.com/platform/platform.js" async></script>
+  <div class="elfsight-app-3e8f01ba-ec9e-4960-890e-b379d9c08b6b" data-elfsight-app-lazy></div>
+
+  <div style="display: flex; justify-content: center;">
+    <iframe src="https://calendar.google.com/calendar/embed?height=300&wkst=1&ctz=America%2FBogota&bgcolor=%23ffffff&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&mode=MONTH&src=YjVmMjQ0ZTE5NWVkMjcyMWRkNTlmODY0NTM0ZDE1YmYzZjE3OWFlMmMyMjNlYmNiOTJkZDM1MzAwZjU1YThlYUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%234285F4" style="border:solid 1px #777" width="400" height="300" frameborder="0" scrolling="no"></iframe>
+  </div>
+
+</body>
+</html>

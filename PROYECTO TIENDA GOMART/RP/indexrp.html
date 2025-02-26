@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <title>Registro de proveedores</title>
+  <link rel="stylesheet" href="diseñoR.css">
+
+  <style>
+    .error-message {
+      color: red;
+      display: none;
+      margin-top: 5px;
+    }
+    .input-group {
+      margin-bottom: 15px;
+    }
+    table thead {
+      background: red;
+      color: white;
+      text-align: center;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+          <th>REGISTRO PROVEEDORES</th>
+        </tr>
+    </thead>
+  </table>
+
+  <div class="container mt-4 shadow-lg p-3 mb-5 bg-body rounded">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>ID Proveedores</th>
+          <th>RUT</th>
+          <th>Nombre Proveedor</th>
+          <th>Tipo de Impuesto</th>
+          <th>Nombre Contacto</th>
+          <th>Dirección</th>
+          <th>Codigo Postal</th>
+          <th>Correo Electronico</th>
+          <th>Telefono</th>
+        </tr>
+      </thead>
+      <tbody id="data">
+      </tbody>
+    </table>
+    
+    <form id="form">
+      <div class="input-group">
+        <input placeholder="ID" type="number" id="codid" name="idProveedor" required>
+        <div class="error-message" id="idProveedorError">El ID es obligatorio.</div>
+      </div>
+
+      <div class="input-group">
+        <input placeholder="RUT" type="number" id="codrut" name="rut" required>
+        <div class="error-message" id="rutError">El RUT es obligatorio.</div>
+      </div>
+
+      <div class="input-group">
+        <input placeholder="Nombre del proveedor" type="text" id="namepro" name="nombreProveedor" required>
+        <div class="error-message" id="nombreProveedorError">El nombre es obligatorios.</div>
+      </div>
+
+      <div class="input-group">
+        <input placeholder="Tipo de Impuesto" type="text" id="tip" name="tipoImpuesto" required>
+        <div class="error-message" id="tipoImpuestoDocumentoError">El Impuesto es obligatorio.</div>
+      </div>
+
+      <div class="input-group">
+        <input placeholder="Nombre del contacto" type="text" id="namecon" name="nombreContacto" required>
+        <div class="error-message" id="nombreContactoError">El nombre del contacto es obligatorio.</div>
+      </div>
+
+      <div class="input-group">
+        <input placeholder="Dirección" type="text" id="address" name="direccion" required>
+      </div>
+
+      <div class="input-group">
+        <input placeholder="Código Postal" type="number" id="codpos" name="codigoPostal" required>
+      </div>
+
+      <div class="input-group">
+        <input placeholder="Correo Electronico" type="email" id="email" name="correoElectronico" required>
+      </div>
+
+      <div class="input-group">
+        <input placeholder="Teléfono" type="number" id="tel" name="telefono" required>
+      </div>
+
+      <button id="limpiar">Limpiar</button>
+      <button id="crear">Crear</button>
+      <button id="modificar2">Editar</button>
+      
+    </form>
+    
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+
+  <script src="./Validar.js"></script>
+  <script src="./procesos.js">
+  </script>
+
+  <div class="menu" id="buscar">
+    <a href="consultarp.html" class="menu-button">Consulta proveedor por ID</a>
+  </div>
+  
+  <script src="https://static.elfsight.com/platform/platform.js" async></script>
+  <div class="elfsight-app-3e8f01ba-ec9e-4960-890e-b379d9c08b6b" data-elfsight-app-lazy></div>
+
+  <script async src="https://cse.google.com/cse.js?cx=12030e514d6b64018">
+  </script>
+  <div class="gcse-search"></div>
+  
+  <br>
+  
+  <div style="display: flex; justify-content: center;">
+    <iframe width="400" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" 
+    src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=%20Pasto+(Ubicaci%C3%B3n)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+    </iframe>
+  </div>
+
+</body>
+</html>
